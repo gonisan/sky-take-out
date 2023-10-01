@@ -91,13 +91,13 @@ public class CategoryController {
 
     /**
      * 根据类型查询分类
-     * @param type
+     * @param
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("根据类型查询分类")
-    public Result<List<Category>> list(Integer type){
-        List<Category> list = categoryService.list(type);
+    public Result<PageResult> list(CategoryPageQueryDTO categoryDTO){
+        PageResult list = categoryService.pageQuery(categoryDTO);
         return Result.success(list);
     }
 }
