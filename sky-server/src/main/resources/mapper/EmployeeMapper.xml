@@ -2,4 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.EmployeeMapper">
+    <insert id="insert" parameterType="Employee">
+        insert into employee ( name, username, password, sex, phone, id_number, create_time
+                             , update_time, create_user, update_user)
+        values (#{name}, #{username}, #{password}, #{sex}, #{phone}, #{idNumber}, #{createTime}, #{updateTime},
+                #{createUser}, #{updateUser})
+    </insert>
 </mapper>
