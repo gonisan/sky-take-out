@@ -12,6 +12,7 @@ public interface EmployeeMapper {
 
     /**
      * 根据用户名查询员工
+     *
      * @param username
      * @return
      */
@@ -25,4 +26,7 @@ public interface EmployeeMapper {
     void updateStatus(Long id, Integer status);
 
     void update(Employee build);
+
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Long id);
 }
